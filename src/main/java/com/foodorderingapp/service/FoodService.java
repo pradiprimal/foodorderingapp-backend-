@@ -12,8 +12,6 @@ public interface FoodService {
     boolean updateFood(Food food,int id);
     List<Food> getAll();
     Food getFoodById(int id);
-    Food addFoodToRestaurant(int id, Food food);
     List<Food> getFoodByRestaurantId(int id);
-    Food addFoodToRestaurant( Food food);
     List<Food> addFoodsToRestaurant(List<Food> foodList);
 }

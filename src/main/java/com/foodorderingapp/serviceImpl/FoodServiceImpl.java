@@ -16,10 +16,6 @@ public class FoodServiceImpl implements FoodService{
     @Autowired
     private FoodDAO foodDAO;
 
-    @Autowired
-    private RestaurantDAO restaurantDAO;
-
-
     public boolean deleteFood(Food food) {
         return foodDAO.deleteFood(food);
     }
@@ -39,18 +35,8 @@ public class FoodServiceImpl implements FoodService{
         return foodDAO.getFoodById(id);
     }
 
-    public Food addFoodToRestaurant(int id, Food food) {
-        Restaurant restaurant = restaurantDAO.getRestaurantById(id);
-        food.setRestaurant(restaurant);
-        return foodDAO.addFoodToRestaurant(id,food);
-    }
-
     public List<Food> getFoodByRestaurantId(int id) {
         return foodDAO.getFoodByRestaurantId(id);
-    }
-
-    public Food addFoodToRestaurant(Food food) {
-        return foodDAO.addFoodToRestaurant(food);
     }
 
     public List<Food> addFoodsToRestaurant(List<Food> foodList) {
