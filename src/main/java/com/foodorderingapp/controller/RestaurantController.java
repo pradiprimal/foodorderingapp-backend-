@@ -37,7 +37,6 @@ public class RestaurantController {
 
     @DeleteMapping(value = "/{id}")
     public void deleteRestaurant(@PathVariable int id) {
-
         restaurantService.deleteRestaurant(getRestaurantById(id));
     }
 
@@ -45,11 +44,6 @@ public class RestaurantController {
     public Restaurant updateRestaurant(@RequestBody Restaurant restaurant, @PathVariable int id) {
         restaurantService.updateRestaurant(restaurant, id);
         return restaurant;
-    }
-
-    @PostMapping(value = "/{id}")
-    public Food addFoodToRestaurant(@RequestBody Food food, @PathVariable int id) {
-      return   foodService.addFoodToRestaurant(id, food);
     }
 
     @GetMapping(value = "/{id}/foods")

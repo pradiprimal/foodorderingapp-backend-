@@ -15,6 +15,7 @@ import java.util.List;
 @Repository("foodDAO")
 @Transactional
 public class FoodDAOImpl implements FoodDAO {
+
     @Autowired
     private SessionFactory sessionFactory;
     @Autowired
@@ -51,30 +52,6 @@ public class FoodDAOImpl implements FoodDAO {
         return sessionFactory.getCurrentSession().get(Food.class, id);
     }
 
-
-    public Food addFoodToRestaurant(int id, Food food) {
-        try{
-         sessionFactory.getCurrentSession().persist(food);
-         sessionFactory.getCurrentSession().flush();
-        return  food;
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
-
-    public Food addFoodToRestaurant(Food food) {
-        try{
-            sessionFactory
-                    .getCurrentSession()
-                        .persist(food);
-            sessionFactory.getCurrentSession().flush();
-            return  food;
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
 
     public List<Food> getFoodByRestaurantId(int id) {
         String query = "FROM Food WHERE restaurant= :restaurant";

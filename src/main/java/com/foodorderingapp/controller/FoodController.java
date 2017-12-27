@@ -40,12 +40,6 @@ public class FoodController {
         return foodService.getFoodById(id);
     }
 
-    /*
-    @PostMapping
-    public Food addFood(@RequestBody Food food){
-        return foodService.addFoodToRestaurant(food);
-    }*/
-
     @PostMapping
     public List<Food> addFoods(@RequestBody List<Food> foodList){
         return foodService.addFoodsToRestaurant(foodList);

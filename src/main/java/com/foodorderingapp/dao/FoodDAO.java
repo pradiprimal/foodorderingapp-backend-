@@ -12,8 +12,6 @@ public interface FoodDAO {
     boolean updateFood(Food food);
     List<Food> getAll();
     Food getFoodById(int id);
-    Food addFoodToRestaurant(int id, Food food);
-    Food addFoodToRestaurant( Food food);
     List<Food> getFoodByRestaurantId(int id);
     List<Food> addFoodsToRestaurant(List<Food> foodList);
 }

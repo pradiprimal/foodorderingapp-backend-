@@ -12,8 +12,10 @@ import java.util.List;
 /**
  * Created by TOPSHI KREATS on 11/29/2017.
  */
+
 @Service("restaurantService")
 public class RestaurantServiceImpl implements RestaurantService {
+
     @Autowired
     private RestaurantDAO restaurantDAO;
 
@@ -41,15 +43,22 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     public void deactivate(int id) {
-        restaurantDAO.deactivate(id);
+        if(!restaurantDAO.getRestaurantById(id).equals(null)){
+            if(getStatus(id)!=false) {
+                restaurantDAO.deactivate(id);
+            }
+        }
     }
 
     public void activate(int id) {
-        restaurantDAO.activate(id);
+        if(!restaurantDAO.getRestaurantById(id).equals(null)){
+            if(getStatus(id)!=true) {
+                restaurantDAO.activate(id);
+            }
+        }
     }
 
     public boolean getStatus(int id) {
         return restaurantDAO.getStatus(id);
     }
-
 }
