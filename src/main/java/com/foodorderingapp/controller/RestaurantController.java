@@ -50,4 +50,14 @@ public class RestaurantController {
     public List<Food> getFoodsByRestaurant(@PathVariable int id) {
         return foodService.getFoodByRestaurantId(id);
     }
+
+    @GetMapping(value = "/{id}/activate")
+    public void activateRestaurant(@PathVariable int id){
+        restaurantService.activate(id);
+    }
+
+    @GetMapping(value = "/{id}/deactivate")
+    public void deactivateRestaurant(@PathVariable int id){
+        restaurantService.deactivate(id);
+    }
 }
