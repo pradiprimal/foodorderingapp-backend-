@@ -1,14 +1,17 @@
 package com.foodorderingapp.service;
 
+import com.foodorderingapp.dto.LoginDto;
+import com.foodorderingapp.dto.UserDto;
 import com.foodorderingapp.model.User;
 
 import java.util.List;
 
 public interface UserService {
 
-    void addUser(User user);
+    void addUser(UserDto userDto);
     List<User> getUsers();
-    // User getUserByEmail(int email);
-     User getUserByEmail(String email);
-     User verifyUser(User user);
+    LoginDto verifyUser(LoginDto loginDto);
+    User getUser(int userId);
+    void updateUser(User user,int userId);
+
 }

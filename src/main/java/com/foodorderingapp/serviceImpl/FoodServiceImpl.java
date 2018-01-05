@@ -16,6 +16,10 @@ public class FoodServiceImpl implements FoodService{
     @Autowired
     private FoodDAO foodDAO;
 
+    @Autowired
+    private RestaurantDAO restaurantDAO;
+
+
     public boolean deleteFood(Food food) {
         return foodDAO.deleteFood(food);
     }
@@ -41,5 +45,10 @@ public class FoodServiceImpl implements FoodService{
 
     public List<Food> addFoodsToRestaurant(List<Food> foodList) {
         return foodDAO.addFoodsToRestaurant(foodList);
+    }
+
+    public Food getFoodByName(String foodName) {
+
+       return foodDAO.getFoodByName(foodName);
     }
 }

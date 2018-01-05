@@ -36,8 +36,9 @@ public class RestaurantController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public void deleteRestaurant(@PathVariable int id) {
-        restaurantService.deleteRestaurant(getRestaurantById(id));
+    public int deleteRestaurant(@PathVariable int id) {
+       restaurantService.deleteRestaurant(getRestaurantById(id));
+       return id;
     }
 
     @PutMapping(value = "/{id}")
@@ -46,18 +47,23 @@ public class RestaurantController {
         return restaurant;
     }
 
+
     @GetMapping(value = "/{id}/foods")
     public List<Food> getFoodsByRestaurant(@PathVariable int id) {
         return foodService.getFoodByRestaurantId(id);
     }
 
     @GetMapping(value = "/{id}/activate")
-    public void activateRestaurant(@PathVariable int id){
+    public int activateRestaurant(@PathVariable int id){
         restaurantService.activate(id);
+        return id;
     }
 
     @GetMapping(value = "/{id}/deactivate")
-    public void deactivateRestaurant(@PathVariable int id){
+    public int deactivateRestaurant(@PathVariable int id){
         restaurantService.deactivate(id);
+        return id;
     }
+
+
 }

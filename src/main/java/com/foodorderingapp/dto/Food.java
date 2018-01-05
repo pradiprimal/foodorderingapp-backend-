@@ -24,8 +24,9 @@ public class Food{
     @ManyToOne
     @NotFound(action = NotFoundAction.IGNORE)
     @JoinColumn(name = "restaurant_id")
-    private Restaurant restaurant;
     @JsonIgnore
+    private Restaurant restaurant;
+
     private transient int restaurantId;
 
     public int getId() {
@@ -59,12 +60,17 @@ public class Food{
         return restaurant;
     }
 
+
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
     }
 
     public int getRestaurantId() {
-        return restaurantId;
+      if(restaurantId==0){
+          return this.getRestaurant().getId();
+      }
+      return restaurantId;
+
     }
 
     public void setRestaurantId(int restaurantId) {

@@ -10,7 +10,7 @@ public interface RestaurantDAO {
     boolean updateRestaurant(Restaurant restaurant);
     List<Restaurant> getAll();
     Restaurant getRestaurantById(int id);
-    void deactivate(int id);
-    void activate(int id);
+    int deactivate(int id);
+    int activate(int id);
     boolean getStatus(int id);
 }

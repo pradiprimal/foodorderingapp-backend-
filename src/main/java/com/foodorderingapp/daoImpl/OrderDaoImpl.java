@@ -2,7 +2,6 @@ package com.foodorderingapp.daoImpl;
 
 import com.foodorderingapp.dao.OrderDAO;
 import com.foodorderingapp.model.Orders;
-import com.foodorderingapp.model.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -28,8 +27,7 @@ public class OrderDaoImpl implements OrderDAO{
 
 
     public List<Orders> getorders() {
+
         return sessionFactory.getCurrentSession().createQuery("FROM Orders",Orders.class).getResultList();
     }
-
-
 }

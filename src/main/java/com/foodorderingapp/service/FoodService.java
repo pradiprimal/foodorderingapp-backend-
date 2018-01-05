@@ -9,9 +9,10 @@ import java.util.List;
  */
 public interface FoodService {
     boolean deleteFood(Food food);
-    boolean updateFood(Food food,int id);
+    boolean updateFood(Food food, int id);
     List<Food> getAll();
     Food getFoodById(int id);
     List<Food> getFoodByRestaurantId(int id);
     List<Food> addFoodsToRestaurant(List<Food> foodList);
+     Food getFoodByName(String foodName);
 }

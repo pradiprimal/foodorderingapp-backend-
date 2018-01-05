@@ -12,12 +12,16 @@ public class OrderDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="order_detail_id")
     private int orderDetailId;
-    @Column(name="quantities")
-    private int quantities;
+    @Column(name="quantity")
+    private int quantity;
+    @Column(name="food_name")
+    private String foodName;
+    @Column(name="restaurant_name")
+    private String restaurantName;
+    @Column(name="food_price")
+    private int foodPrice;
 
-    @ManyToOne
-    @JoinColumn(name="food_id")
-    private Food food;
+
 
     @ManyToOne
     @JoinColumn(name="order_id")
@@ -32,27 +36,44 @@ public class OrderDetail {
         this.orderDetailId = orderDetailId;
     }
 
-    public int getQuantities() {
-        return quantities;
-    }
-
-    public void setQuantities(int quantities) {
-        this.quantities = quantities;
-    }
-
-    public Food getFood() {
-        return food;
-    }
-
-    public void setFood(Food food) {
-        this.food = food;
-    }
-
     public Orders getOrders() {
         return orders;
     }
 
     public void setOrders(Orders orders) {
         this.orders = orders;
+    }
+
+
+    public String getFoodName() {
+        return foodName;
+    }
+
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
+    }
+
+    public String getRestaurantName() {
+        return restaurantName;
+    }
+
+    public void setRestaurantName(String restaurantName) {
+        this.restaurantName = restaurantName;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getFoodPrice() {
+        return foodPrice;
+    }
+
+    public void setFoodPrice(int foodPrice) {
+        this.foodPrice = foodPrice;
     }
 }

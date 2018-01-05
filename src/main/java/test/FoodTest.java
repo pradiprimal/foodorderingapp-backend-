@@ -3,8 +3,6 @@ package test;
 import com.foodorderingapp.dao.FoodDAO;
 import com.foodorderingapp.dao.RestaurantDAO;
 import com.foodorderingapp.dto.Food;
-import com.foodorderingapp.dto.Restaurant;
-import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.junit.BeforeClass;
 import static org.junit.Assert.assertEquals;

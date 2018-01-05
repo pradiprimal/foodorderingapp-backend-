@@ -2,9 +2,6 @@ package test;
 
 import com.foodorderingapp.dao.RestaurantDAO;
 import com.foodorderingapp.dto.Restaurant;
-import com.foodorderingapp.service.FoodService;
-import com.foodorderingapp.service.RestaurantService;
-import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.junit.BeforeClass;

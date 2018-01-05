@@ -1,15 +1,16 @@
 package com.foodorderingapp.dto;
 
-import com.foodorderingapp.dto.Food;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrderDto {
 
+
     private int userId;
 
     private List<FoodQuantity> foodList=new ArrayList<FoodQuantity>();
+
+
 
 
     public int getUserId() {

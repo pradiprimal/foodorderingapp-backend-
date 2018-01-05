@@ -9,11 +9,12 @@ public class UserDto {
     private String userPassword;
     private String email;
     private String address;
-    private String userRole;
+    private String role;
     private String firstName;
     private String middleName;
     private String lastName;;
     private String contactNo;
+    private int balance;
 
 
 
@@ -50,12 +51,12 @@ public class UserDto {
         this.address = address;
     }
 
-    public String getUserRole() {
-        return userRole;
+    public String getRole() {
+        return role;
     }
 
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
+    public void setRole(String role) {
+        this.role = role;
     }
 
 
@@ -89,5 +90,13 @@ public class UserDto {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 }

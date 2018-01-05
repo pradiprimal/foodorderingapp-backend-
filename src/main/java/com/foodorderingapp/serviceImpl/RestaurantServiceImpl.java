@@ -42,20 +42,22 @@ public class RestaurantServiceImpl implements RestaurantService {
         return restaurantDAO.getRestaurantById(id);
     }
 
-    public void deactivate(int id) {
+    public int deactivate(int id) {
         if(!restaurantDAO.getRestaurantById(id).equals(null)){
             if(getStatus(id)!=false) {
                 restaurantDAO.deactivate(id);
             }
         }
+        return id;
     }
 
-    public void activate(int id) {
+    public int activate(int id) {
         if(!restaurantDAO.getRestaurantById(id).equals(null)){
             if(getStatus(id)!=true) {
                 restaurantDAO.activate(id);
             }
         }
+        return id;
     }
 
     public boolean getStatus(int id) {

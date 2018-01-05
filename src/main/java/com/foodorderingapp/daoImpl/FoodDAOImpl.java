@@ -81,4 +81,11 @@ public class FoodDAOImpl implements FoodDAO {
         }
         return null;
     }
+
+    public Food getFoodByName(String foodName) {
+
+       return  sessionFactory.getCurrentSession().createQuery("FROM Food where name=:foodName",Food.class).
+                setParameter("foodName",foodName).
+                getSingleResult();
+    }
 }
